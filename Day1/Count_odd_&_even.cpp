@@ -1,18 +1,24 @@
-// time complexity is O(log n) 
+// time complexity is O(n)
 // space complexity is O(1)
 class Solution {
   public:
-    int countDigits(int n) {
-        // Code here
-        int num=n;
-        int co = 0;
-        while(num>0){
-            int d=num%10;
-            co = co+1;
-            num/=10;
+    /*Function to count even and odd elements in the array
+     * arr : Array with its elements
+     */
+    pair<int, int> countOddEven(vector<int> &arr) {
+        // your code here
+        int n = arr.size();
+        int co1 = 0,co2=0;
+        for(int i=0;i<n;i++){
+            if(arr[i]%2==0){
+                  co1=co1+1;
+            }
+            else
+            {
+                co2=co2+1;
+            }
         }
-        return co;
-           
-    }    
-    
+        return {co2,co1};
+        
+    }
 };
